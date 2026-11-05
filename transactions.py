@@ -44,15 +44,15 @@ def add_transaction(
     return transactions
 
 
-def show_transactions(transactions: List) -> None:
+def show_transactions(transactions: list) -> None:
     """
     Show data for all transactions in formatted table
-    Args: 
+    Args:
         transactions: List of transactions
     Returns:
         None
     """
-    
+
     fields = ["id", "type", "amount", "category", "description"]
     column_width = 16
 
@@ -66,9 +66,6 @@ def show_transactions(transactions: List) -> None:
             print(f"{str(transaction[field]):^{column_width - 1}}|", end="")
 
         print()
-
-
-show_transactions([])
 
 
 def delete_transaction(transactions: list, transaction_id: str) -> list:
