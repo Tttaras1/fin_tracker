@@ -1,11 +1,13 @@
-"""Calculate totals and filter financial transactions."""
 
-def calculate_income(transactions):
-    """Return the sum of amounts for income transactions.
-
-    Args:
-        transactions: Transaction dictionaries containing ``type`` and ``amount``.
+def calculate_income(transactions: list) -> float :
     """
+    Calculates income from transactions
+    Args:
+        transactions: list of transactions
+    Returns:
+        Sum amount of income
+    """
+    
     return sum(
         transaction["amount"]
         for transaction in transactions
@@ -13,11 +15,13 @@ def calculate_income(transactions):
     )
 
 
-def calculate_expenses(transactions):
-    """Return the sum of amounts for expense transactions.
-
+def calculate_expenses(transactions: list) -> float:
+    """
+    Calculates expense from transactions
     Args:
-        transactions: Transaction dictionaries containing ``type`` and ``amount``.
+        transactions: list of transactions
+    Returns:
+        Sum amount of expenses
     """
     return sum(
         transaction["amount"]
@@ -26,21 +30,25 @@ def calculate_expenses(transactions):
     )
 
 
-def calculate_balance(transactions):
-    """Return total income minus total expenses.
-
+def calculate_balance(transactions: list) -> float:
+    """
+    Calculates total balance from transactions
     Args:
-        transactions: Transaction dictionaries to calculate the balance from.
+        transactions: list of transactions
+    Returns:
+        Balance
     """
     return calculate_income(transactions) - calculate_expenses(transactions)
 
 
-def filter_by_category(transactions, category):
-    """Return transactions whose category matches, ignoring letter case.
-
+def filter_by_category(transactions: list, category: str) -> list:
+    """
+    Filters transactions by category
     Args:
-        transactions: Transaction dictionaries to filter.
-        category: Category name to match.
+        transactions: List of transactions
+        category: Category to which filter by
+    Returns:
+        Filtered transaction list
     """
     return [
         transaction
