@@ -44,7 +44,7 @@ def add_transaction(
     return transactions
 
 
-def show_transactions(transactions: List) -> None:
+def show_transactions(transactions: list) -> None:
     """
     Show data for all transactions in formatted table
     Args: 
